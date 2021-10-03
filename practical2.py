@@ -1,0 +1,127 @@
+import turtle
+import math
+
+screen = turtle.Screen()
+screen.bgcolor("black")
+
+t = turtle.Turtle()
+t.shape("circle")
+t.color("black")
+t.speed(3)
+
+def drawRectangle(t, width, height, color):
+    t.fillcolor(color)
+    t.begin_fill()
+    t.forward(width)
+    t.left(90)
+    t.forward(height)
+    t.left(90)
+    t.forward(width)
+    t.left(90)
+    t.forward(height)
+    t.left(90)
+    t.end_fill()
+
+def drawTriangle(t, length, color):
+    t.fillcolor(color)
+    t.begin_fill()
+    t.forward(length)
+    t.left(135)
+    t.forward(length / math.sqrt(2))
+    t.left(90)
+    t.forward(length / math.sqrt(2))
+    t.left(135)
+    t.end_fill()
+
+t.penup()
+t.goto(0, -70)
+t.pendown()
+drawRectangle(t, 150, 110, "pink")
+
+t.penup()
+t.goto(50, -70)
+t.pendown()
+drawRectangle(t, 50, 60,"yellow")
+
+t.penup()
+t.goto(0, 40)
+t.pendown()
+drawTriangle(t, 150, "yellow")
+t.penup()
+t.color("black")
+t.goto(73,55)
+t.pendown()
+t.color("pink")
+t.begin_fill()
+t.circle(15)
+t.penup()
+t.end_fill()
+t.penup()
+
+t.penup()
+t.color("black")
+t.goto(30, -80)
+t.left(90)
+
+def drawSun():
+    t.color("Yellow")
+    t.penup()
+    t.goto(270,220)
+    t.pendown()
+    t.begin_fill()
+    t.circle(50)
+    t.penup()
+    t.end_fill()
+    t.penup()
+    t.goto(220, 220)
+    for i in range(8):
+        t.pendown()
+        t.pensize(5)
+        t.forward(100)
+        t.backward(100)
+        t.left(45)
+        t.penup()
+
+
+drawSun()
+screen.bgcolor("lightblue")
+t.color("black")
+
+def tree():
+    t.goto(-80, 30)
+    t.pd()
+    t.color("green")
+    t.begin_fill()
+    t.left(45)
+    t.forward(200)
+    t.left(90)
+    t.forward(200)
+    t.left(45)
+    t.left(90)
+    t.forward(200)
+    t.end_fill()
+    t.penup()
+
+tree()
+t.color("black")
+
+def branch():
+    t.goto(-265,28)
+    t.pendown()
+    t.color("brown")
+    t.begin_fill()
+    t.left(180)
+    t.left(90)
+    t.forward(90)
+    t.left(90)
+    t.forward(90)
+    t.left(90)
+    t.forward(90)
+    t.end_fill()
+    t.penup()
+    t.hideturtle()
+    t.goto(0,0)
+
+branch()
+turtle.mainloop()
+
